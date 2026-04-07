@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor de Cuba | Menú Imprimible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="print.css">
+</head>
+<body>
+    <div class="print-container">
+        <header class="print-header">
+            <h1 class="print-brand">Sabor de Cuba</h1>
+            <p class="print-tagline">Tradición · Ritmo · Autenticidad</p>
+            <div class="print-divider"></div>
+        </header>
+
+        <main id="print-menu-grid">
+            <!-- Content will be mirrored from the data -->
+        </main>
+
+        <footer class="print-footer">
+            <div class="qr-section">
+                <div class="qr-code" id="qrcode">
+                    <!-- QR code will be generated here -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://cocteles-bar.vercel.app" alt="QR Code" class="qr-img">
+                </div>
+                <div class="qr-text">
+                    <p>Escanea para ver la versión digital interactiva</p>
+                </div>
+            </div>
+            <div class="print-motto">VIVE LA EXPERIENCIA CUBANA</div>
+        </footer>
+    </div>
+
+    <!-- Hidden dynamic data reference can be added if needed, or static render -->
+    <script src="script.js"></script>
+    <script>
+        // Custom render for print layout if not static
+        document.addEventListener('DOMContentLoaded', () => {
+            // Re-render specifically for print if needed, but script.js already renders to #menu-container
+            // I'll update script.js to detect the container or render here too.
+        });
+    </script>
+</body>
+</html>
