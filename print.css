@@ -1,0 +1,133 @@
+:root {
+    --print-bg: #fdfbf7;
+    --print-text: #1a1a1a;
+    --print-accent: #8b6b13;
+    --print-muted: #555;
+    --print-border: #ddd;
+}
+
+body {
+    background-color: white;
+    color: var(--print-text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.print-container {
+    width: 210mm; /* A4 Width */
+    min-height: 297mm; /* A4 Height */
+    padding: 20mm;
+    margin: 0 auto;
+    background-color: var(--print-bg);
+    box-shadow: none;
+}
+
+.print-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--print-accent);
+    padding-bottom: 1rem;
+}
+
+.print-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--print-accent);
+    margin: 0;
+}
+
+.print-tagline {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--print-muted);
+}
+
+/* Grilla de Menú para Impresión */
+#print-menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.category-title {
+    grid-column: 1 / -1;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--print-accent);
+    border-bottom: 1px solid var(--print-border);
+    margin: 1.5rem 0 1rem 0;
+    padding-bottom: 0.3rem;
+}
+
+/* Item styling */
+.print-item {
+    margin-bottom: 1.2rem;
+    page-break-inside: avoid;
+}
+
+.print-item-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    border-bottom: 1px dotted var(--print-border);
+}
+
+.print-item-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+}
+
+.print-item-price {
+    color: var(--print-accent);
+}
+
+.print-item-ingredients {
+    font-size: 0.85rem;
+    color: var(--print-muted);
+    margin-top: 0.2rem;
+}
+
+/* Footer con QR */
+.print-footer {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--print-border);
+}
+
+.qr-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.qr-img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--print-border);
+    padding: 5px;
+    background: white;
+}
+
+.qr-text {
+    font-size: 0.75rem;
+    color: var(--print-muted);
+    max-width: 150px;
+}
+
+.print-motto {
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    color: var(--print-accent);
+}
+
+@media print {
+    body { background: none; }
+    .print-container { width: 100%; margin: 0; padding: 10mm; }
+    .no-print { display: none; }
+}
